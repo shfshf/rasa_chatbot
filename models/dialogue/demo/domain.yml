@@ -1,0 +1,139 @@
+%YAML 1.1
+---
+action_factory: null
+action_names:
+- utter_greet
+- utter_ask_type
+- utter_ask_company
+- utter_ask_fund_achievement_duration
+- utter_ask_fund_achievement_topk
+- utter_ask_topic
+- utter_working_on_it
+- action_fund_search_response
+- action_fund_search_with_achievement
+- utter_response_fund
+- utter_goodbye
+actions:
+- utter_greet
+- utter_ask_type
+- utter_ask_company
+- utter_ask_fund_achievement_duration
+- utter_ask_fund_achievement_topk
+- utter_ask_topic
+- utter_working_on_it
+- bot.actions.ActionFundSearchResponse
+- bot.actions.ActionFundSearchWithAchievement
+- utter_response_fund
+- utter_goodbye
+config:
+  store_entities_as_slots: true
+entities:
+- fund_type
+- fund_company
+- duration
+- topk
+- fund_topic
+intents:
+- greet:
+    use_entities: true
+- thankyou:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- fund_search:
+    use_entities: true
+- fund_search_with_type:
+    use_entities: true
+- fund_search_with_achievement:
+    use_entities: true
+- fund_search_with_company:
+    use_entities: true
+- fund_search_with_topic:
+    use_entities: true
+- inform:
+    use_entities: true
+slots:
+  fund_achievement_duration:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  fund_achievement_topk:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  fund_company:
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  fund_sacle:
+    initial_value: null
+    type: rasa_core.slots.CategoricalSlot
+    values:
+    - 小于2亿元
+    - 小于10亿元
+    - 小于50亿元
+    - 小于100亿元
+    - 大于100亿元
+  fund_topic:
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  fund_type:
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  matches:
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  requested_slot:
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+templates:
+  utter_ask_company:
+  - buttons:
+    - payload: 华夏
+      title: 华夏
+    - payload: 嘉实
+      title: 嘉实
+    - payload: 易方达
+      title: 易方达
+    - payload: 南方
+      title: 南方
+    - payload: 中银
+      title: 中银
+    - payload: 广发
+      title: 广发
+    - payload: 工银
+      title: 工银
+    - payload: 博时
+      title: 博时
+    - payload: 华安
+      title: 华安
+    text: 你关注哪家公司的基金呢？
+  utter_ask_fund_achievement_duration:
+  - text: 你关注基金多久的表现呢？
+  utter_ask_fund_achievement_topk:
+  - text: 你关注表现排名前多少的基金呢？
+  utter_ask_topic:
+  - text: 你关注什么话题的基金呢？
+  utter_ask_type:
+  - buttons:
+    - payload: 股票型
+      title: 股票型
+    - payload: 混合型
+      title: 混合型
+    - payload: 债卷型
+      title: 债卷型
+    - payload: 指数型
+      title: 指数型
+    - payload: QDII
+      title: QDII
+    - payload: FOF
+      title: FOF
+    text: 你关注什么类型的基金呢？
+  utter_goodbye:
+  - text: 拜拜！
+  - text: goodbye :(
+  utter_greet:
+  - text: 你好，请说出你对基金的偏好
+  utter_other:
+  - text: 我暂时听不懂这句话。
+  utter_response_fund:
+  - text: '{matches}'
+  utter_working_on_it:
+  - text: 正在查询中，请稍后 ...

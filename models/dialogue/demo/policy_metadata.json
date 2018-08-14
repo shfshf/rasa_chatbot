@@ -1,0 +1,33 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "fund_achievement_duration",
+        "fund_type",
+        "fund_company",
+        "fund_achievement_topk",
+        "fund_topic"
+      ]
+    },
+    "utter_response_fund": {
+      "slots": []
+    },
+    "action_fund_search_with_achievement": {
+      "slots": [
+        "fund_achievement_topk",
+        "fund_achievement_duration",
+        "requested_slot"
+      ]
+    }
+  },
+  "rasa_core": "0.10.2",
+  "max_histories": [
+    3,
+    3
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ]
+}

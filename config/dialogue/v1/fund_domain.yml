@@ -1,0 +1,77 @@
+intents:
+  - greet
+  - thankyou
+  - goodbye
+  - fund_rec
+  - inform
+
+slots: 
+  fund_type:
+    type: text
+  fund_company:
+    type: text
+  fund_achievement_duration:
+    type: text
+  fund_achievement_topk:
+    type: text
+  fund_topic:
+    type: text
+  search_results:
+    type: unfeaturized 
+  requested_slot:
+    type: unfeaturized
+
+entities:
+- fund_type
+- fund_company
+- duration
+- topk
+- fund_topic
+
+actions:
+- utter_greet
+- utter_ask_type
+- utter_ask_company
+- utter_ask_fund_achievement_duration
+- utter_ask_fund_achievement_topk
+- utter_ask_topic
+- utter_working_on_it
+- bot.actions.ActionFundSearchResponse
+- bot.actions.ActionFundSearchWithAchievement
+- utter_response_fund
+- utter_goodbye
+
+templates:
+  utter_greet:
+  - text: "你好，请说出你对基金的偏好"
+
+  utter_working_on_it:
+  - text: "正在查询中，请稍后 ..."
+
+  utter_goodbye:
+  - text: "拜拜！"
+  - text: "goodbye :(" 
+
+  utter_ask_type:
+  - text: "你关注什么类型的基金呢？"
+
+  utter_ask_company:
+  - text: "你关注哪家公司的基金呢？"
+
+  utter_ask_achievement:
+  - text: "你对基金的表现有什么要求？"
+
+  utter_ask_fund_achievement_duration:
+  - text: "你关注基金多久的表现呢？"
+
+  utter_ask_fund_achievement_topk:
+  - text: "你关注表现排名前多少的基金呢？"
+
+  utter_ask_topic:
+  - text: "你关注什么话题的基金呢？"
+
+  utter_response_fund:
+  - text: "{search_results}"
+
+  utter_other:
+  - text: "我暂时听不懂这句话。"

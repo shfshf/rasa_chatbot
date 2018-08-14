@@ -1,0 +1,10 @@
+language: "zh" # language
+
+pipeline:
+- name: "nlp_mitie" # initializer
+  model: "/work/FundBot/data/total_word_feature_extractor.dat" # language model to load
+- name: "tokenizer_jieba" #tokenizer
+- name: "ner_mitie"       #ner model
+- name: "ner_synonyms"    #ner map
+- name: "intent_featurizer_mitie" #intent_featurizer
+- name: "intent_classifier_sklearn" #intent_classifier

@@ -1,0 +1,231 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "Hi"
+      },
+      {
+        "intent": "greet",
+        "text": "Hello"
+      },
+      {
+        "intent": "greet",
+        "text": "你好"
+      },
+      {
+        "intent": "greet",
+        "text": "您好"
+      },
+      {
+        "intent": "greet",
+        "text": "喂"
+      },
+      {
+        "intent": "greet",
+        "text": "在么"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thanks"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thankyou"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thanks very much"
+      },
+      {
+        "intent": "thankyou",
+        "text": "谢谢"
+      },
+      {
+        "intent": "thankyou",
+        "text": "十分感谢"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see you"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "拜拜"
+      },
+      {
+        "intent": "goodbye",
+        "text": "再见"
+      },
+      {
+        "intent": "goodbye",
+        "text": "拜"
+      },
+      {
+        "intent": "goodbye",
+        "text": "退出"
+      },
+      {
+        "intent": "goodbye",
+        "text": "结束"
+      },
+      {
+        "intent": "fund_search_with_type",
+        "entities": [
+          {
+            "start": 6,
+            "end": 9,
+            "value": "股票型",
+            "entity": "fund_type"
+          }
+        ],
+        "text": "帮我推荐一只股票型的。"
+      },
+      {
+        "intent": "fund_search_with_type",
+        "entities": [
+          {
+            "start": 6,
+            "end": 11,
+            "value": "股票型",
+            "entity": "fund_type"
+          }
+        ],
+        "text": "帮我推荐一只股票型基金。"
+      },
+      {
+        "intent": "fund_search_with_type",
+        "entities": [
+          {
+            "start": 6,
+            "end": 8,
+            "value": "股票型",
+            "entity": "fund_type"
+          }
+        ],
+        "text": "帮我推荐一只股基。"
+      },
+      {
+        "intent": "fund_search_with_company",
+        "entities": [
+          {
+            "start": 6,
+            "end": 9,
+            "value": "易方达",
+            "entity": "fund_company"
+          }
+        ],
+        "text": "帮我推荐一只易方达的基金。"
+      },
+      {
+        "intent": "fund_search_with_topic",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "2025规划",
+            "entity": "fund_topic"
+          }
+        ],
+        "text": "帮我推荐一只关于2025规划的基金。"
+      },
+      {
+        "intent": "fund_search_with_type_company",
+        "entities": [
+          {
+            "start": 6,
+            "end": 8,
+            "value": "嘉实",
+            "entity": "fund_company"
+          },
+          {
+            "start": 9,
+            "end": 11,
+            "value": "混合型",
+            "entity": "fund_type"
+          }
+        ],
+        "text": "帮我推荐一只嘉实的混基。"
+      },
+      {
+        "intent": "fund_search_with_company_topic",
+        "entities": [
+          {
+            "start": 6,
+            "end": 9,
+            "value": "汇添富",
+            "entity": "fund_company"
+          },
+          {
+            "start": 11,
+            "end": 15,
+            "value": "5G",
+            "entity": "fund_topic"
+          }
+        ],
+        "text": "帮我推荐一只汇添富关于5G概念的基金。"
+      }
+    ],
+    "regex_features": [
+      {
+        "name": "zipcode",
+        "pattern": "[0-9]{5}"
+      }
+    ],
+    "entity_synonyms": [
+      {
+        "value": "股票型",
+        "synonyms": [
+          "股票型基金",
+          "股基"
+        ]
+      },
+      {
+        "value": "货币型",
+        "synonyms": [
+          "货币型基金",
+          "货基"
+        ]
+      },
+      {
+        "value": "债券型",
+        "synonyms": [
+          "债券型基金",
+          "债基"
+        ]
+      },
+      {
+        "value": "混合型",
+        "synonyms": [
+          "混基"
+        ]
+      },
+      {
+        "value": "5G",
+        "synonyms": [
+          "5G概念"
+        ]
+      }
+    ]
+  }
+}
